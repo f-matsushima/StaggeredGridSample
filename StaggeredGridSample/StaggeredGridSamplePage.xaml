@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:StaggeredGridSample" x:Class="StaggeredGridSample.StaggeredGridSamplePage">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" Android="0" WinPhone="0" />
+	</ContentPage.Padding>
+	
+	<ContentPage.Content>
+		<local:StaggeredGridView x:Name="gridView" RowSpacing="30" ColumnSpacing="30" SpanCount="3">
+			<local:StaggeredGridView.ItemTemplate>
+				<DataTemplate>
+					<local:StaggeredGridCell Ratio="{Binding Ratio}" >
+						<Image Source="{Binding Filename}" Aspect="Fill" />
+					</local:StaggeredGridCell>
+				</DataTemplate>
+			</local:StaggeredGridView.ItemTemplate>
+		</local:StaggeredGridView>
+	</ContentPage.Content>
+	
+</ContentPage>
